@@ -12,9 +12,26 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Logout successful!</h1>
+        <h1 name="out">Logout successful!</h1>
         <br/>
         You will be directed to /login after <span id="time"></span> seconds
+        <style>
+            body{
+                margin: 0 auto; /* chỉnh lề giao diện tự động */
+                background: url("https://daihoc.fpt.edu.vn/wp-content/uploads/2022/02/HCM-scaled.jpeg");
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+             .content
+    {
+        text-align:center;
+        line-height: 40px;
+        color: aliceblue;
+        font-weight: bold;
+
+    }
+            
+        </style>
         <script> 
         var count =3;
         var time = document.getElementById('time');
