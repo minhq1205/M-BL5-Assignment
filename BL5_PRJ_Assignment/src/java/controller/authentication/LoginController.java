@@ -11,6 +11,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.sql.SQLException;
 import model.Account;
 
 /**
@@ -47,19 +48,19 @@ public class LoginController extends HttpServlet {
     throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        AccountDBContext db = new AccountDBContext();
+            AccountDBContext db = new AccountDBContext();
         Account account = db.get(username, password);
         if(account!=null)
         {
             request.getSession().setAttribute("account", account);
              request.getRequestDispatcher("view/home.jsp").forward(request, response);
             response.getWriter().println("login successful!");
-        }
+                }
         else
         {
             response.getWriter().println("login failed!");
-        }       
-    }
+            }
+        }
 
     /** 
      * Returns a short description of the servlet.

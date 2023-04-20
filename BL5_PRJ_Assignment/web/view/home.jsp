@@ -58,7 +58,7 @@
 
         <c:if test="${sessionScope.account ne null}">
             <div class="intro"> Hello ${sessionScope.account.displayname} </div><br><!-- comment -->
-            <a class="tt"  href="timetable?lid=1&from=2023-02-20&to=2023-02-26">Access time table</a> <br>
+            <a class="tt"  href="timetable?lid=1&from=2023-02-20&to=2023-02-26">Access work schedule</a> <br>
             , click 
             <a href="logout">here</a> 
             to logout. <br>

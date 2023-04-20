@@ -24,10 +24,10 @@ public class AccountDBContext extends DBContext<Account> {
         try {
             String sql = "SELECT username,displayname FROM Account WHERE\n"
                     + "username = ? AND [password] = ?";
-             stm = connection.prepareStatement(sql);
-             stm.setString(1, username);
-             stm.setString(2, password);
-             rs = stm.executeQuery();
+            stm = connection.prepareStatement(sql);
+            stm.setString(1, username);
+            stm.setString(2, password);
+            rs = stm.executeQuery();
             if(rs.next())
             {
                 Account account = new Account();
@@ -42,19 +42,19 @@ public class AccountDBContext extends DBContext<Account> {
         {
             if(rs!=null)
                 try {
-                    rs.close();
+                rs.close();
             } catch (SQLException ex) {
                 Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
             }
             if(stm != null)
                 try {
-                    stm.close();
+                stm.close();
             } catch (SQLException ex) {
                 Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
             }
             if(connection != null)
                 try {
-                    connection.close();
+                connection.close();
             } catch (SQLException ex) {
                 Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
             }
