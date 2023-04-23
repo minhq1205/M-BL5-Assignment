@@ -28,8 +28,7 @@ public class AccountDBContext extends DBContext<Account> {
             stm.setString(1, username);
             stm.setString(2, password);
             rs = stm.executeQuery();
-            if(rs.next())
-            {
+            if (rs.next()) {
                 Account account = new Account();
                 account.setUsername(username);
                 account.setDisplayname(rs.getString("displayname"));
@@ -37,22 +36,20 @@ public class AccountDBContext extends DBContext<Account> {
             }
         } catch (SQLException ex) {
             Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        finally
-        {
-            if(rs!=null)
+        } finally {
+            if (rs != null)
                 try {
                 rs.close();
             } catch (SQLException ex) {
                 Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
             }
-            if(stm != null)
+            if (stm != null)
                 try {
                 stm.close();
             } catch (SQLException ex) {
                 Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
             }
-            if(connection != null)
+            if (connection != null)
                 try {
                 connection.close();
             } catch (SQLException ex) {
@@ -60,6 +57,30 @@ public class AccountDBContext extends DBContext<Account> {
             }
         }
         return null;
+    }
+
+    public String authenticate(String username, String password) {
+        String role = null;
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        try {
+            String sql = "Select a.role_name From Account ac\n"
+                    + "join User_Role ur on ac.user_id = ur.user_id\n"
+                    + "join role a On ur.role_id = a.role_id\n"
+                    + "Where ac.username = ? and ac.password = ?";
+            stm = connection.prepareStatement(sql);
+            stm.setString(1, username);
+            stm.setString(2, password);
+            rs = stm.executeQuery();
+            if (rs.next()) {
+                role = rs.getString("role_name");
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+        return role;
     }
 
     @Override
