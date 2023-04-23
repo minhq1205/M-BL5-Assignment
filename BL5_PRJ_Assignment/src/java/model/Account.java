@@ -12,17 +12,17 @@ public class Account {
     private String username;
     private String password;
     private String displayname;
-    private int user_id;
+    private int userid;
     private String role;
 
     public Account() {
     }
 
-    public Account(String username, String password, String displayname, int user_id,String role) {
+    public Account(String username, String password, String displayname, int userid,String role) {
         this.username = username;
         this.password = password;
         this.displayname = displayname;
-        this.user_id = user_id;
+        this.userid = userid;
         this.role = role;
     }
 
@@ -50,13 +50,15 @@ public class Account {
         this.displayname = displayname;
     }
 
-    public int getUser_id() {
-        return user_id;
+    public int getUserid() {
+        return userid;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
+
+
 
     public String getRole() {
         return role;

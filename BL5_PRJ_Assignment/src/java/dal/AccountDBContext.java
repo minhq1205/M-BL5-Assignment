@@ -67,12 +67,13 @@ public class AccountDBContext extends DBContext<Account> {
             String sql = "Select a.role_name From Account ac\n"
                     + "join User_Role ur on ac.user_id = ur.user_id\n"
                     + "join role a On ur.role_id = a.role_id\n"
-                    + "Where ac.username = ? and ac.password = ?";
+                    + "Where ac.username = ? and ac.[password] = ?";
             stm = connection.prepareStatement(sql);
             stm.setString(1, username);
             stm.setString(2, password);
             rs = stm.executeQuery();
             if (rs.next()) {
+                
                 role = rs.getString("role_name");
 
             }
