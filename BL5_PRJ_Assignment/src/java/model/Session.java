@@ -5,6 +5,7 @@
 package model;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,17 +17,25 @@ public class Session {
     private Time time;
     private Date date;
     private boolean present; 
+    private Group group;
+
+    private ArrayList<CheckWork> atts = new ArrayList<>();
+
+
 
     public Session() {
     }
 
-    public Session(int id, Manager manager, Time time, Date date, boolean present) {
+    public Session(int id, Manager manager, Time time, Date date, boolean present, Group group) {
         this.id = id;
         this.manager = manager;
         this.time = time;
         this.date = date;
         this.present = present;
+        this.group = group;
     }
+
+
 
     public int getId() {
         return id;
@@ -67,6 +76,23 @@ public class Session {
     public void setPresent(boolean present) {
         this.present = present;
     }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
+    }
+
+    public ArrayList<CheckWork> getAtts() {
+        return atts;
+    }
+
+    public void setAtts(ArrayList<CheckWork> atts) {
+        this.atts = atts;
+    }
+    
 
     
 

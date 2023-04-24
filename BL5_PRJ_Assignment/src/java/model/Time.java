@@ -4,28 +4,30 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author ADMIN
  */
 public class Time {
-   private int tid;
+   private int id;
    private String time;
 
     public Time() {
     }
 
-    public Time(int tid, String time) {
-        this.tid = tid;
+    public Time(int id, String time) {
+        this.id = id;
         this.time = time;
     }
 
-    public int getTid() {
-        return tid;
+    public int getId() {
+        return id;
     }
 
-    public void setTid(int tid) {
-        this.tid = tid;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTime() {
@@ -36,5 +38,12 @@ public class Time {
         this.time = time;
     }
    
-   
+    public ArrayList<Session> getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(ArrayList<Session> sessions) {
+        this.sessions = sessions;
+    }
+    private ArrayList<Session> sessions = new ArrayList<>();
 }

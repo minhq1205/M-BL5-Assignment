@@ -71,7 +71,7 @@ public class AccountDBContext extends DBContext<Account> {
             stm.setString(2, password);
             rs = stm.executeQuery();
             if (rs.next()) {
-                role = rs.getString("role_name");
+                role = rs.getString("role");
 
             }
         } catch (SQLException ex) {

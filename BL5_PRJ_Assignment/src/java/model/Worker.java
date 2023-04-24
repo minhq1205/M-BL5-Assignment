@@ -9,33 +9,33 @@ package model;
  * @author ADMIN
  */
 public class Worker {
-    private int wid;
-    private String wname;
+    private int id;
+    private String name;
     private String contact;
 
     public Worker() {
     }
 
-    public Worker(int wid, String wname, String contact) {
-        this.wid = wid;
-        this.wname = wname;
+    public Worker(int id, String name, String contact) {
+        this.id = id;
+        this.name = name;
         this.contact = contact;
     }
 
-    public int getWid() {
-        return wid;
+    public int getId() {
+        return id;
     }
 
-    public void setWid(int wid) {
-        this.wid = wid;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getWname() {
-        return wname;
+    public String getName() {
+        return name;
     }
 
-    public void setWname(String wname) {
-        this.wname = wname;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getContact() {

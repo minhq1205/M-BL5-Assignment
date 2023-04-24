@@ -9,33 +9,33 @@ package model;
  * @author ADMIN
  */
 public class Manager {
-    private int mid;
-    private String mname;
+    private int id;
+    private String name;
     private String contact;
 
     public Manager() {
     }
 
-    public Manager(int mid, String mname, String contact) {
-        this.mid = mid;
-        this.mname = mname;
+    public Manager(int id, String name, String contact) {
+        this.id = id;
+        this.name = name;
         this.contact = contact;
     }
 
-    public int getMid() {
-        return mid;
+    public int getId() {
+        return id;
     }
 
-    public void setMid(int mid) {
-        this.mid = mid;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getMname() {
-        return mname;
+    public String getName() {
+        return name;
     }
 
-    public void setMname(String mname) {
-        this.mname = mname;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getContact() {

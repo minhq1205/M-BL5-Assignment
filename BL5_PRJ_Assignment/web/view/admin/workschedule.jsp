@@ -21,7 +21,7 @@
             }
             table{
                 border-collapse:collapse;
-                width:100%;
+                idth:100%;
                 
             }
             th, td{
@@ -39,7 +39,7 @@
         <div class> Work Schedule </div><br>
         </head>
     <body>
-        Lecturer: <input type="text" readonly="readonly" value="${requestScope.lecturer.name}"/>
+        Manager: <input type="text" readonly="readonly" value="${requestScope.Manager.name}"/>
         <form action="timetable" method="GET">
             <input type="hidden" name="lid" value="${param.lid}"/>
             From: <input type="date" name="from" value="${requestScope.from}"/>

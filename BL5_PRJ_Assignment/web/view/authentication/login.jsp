@@ -42,7 +42,7 @@
     .wrap
     {
         margin: 0 auto; /* chỉnh lề giao diện tự động */
-        width: 1000px; /* phải đặt kích thước giao diện cho trang */
+        idth: 1000px; /* phải đặt kích thước giao diện cho trang */
         background-color:lightblue;
     }
 

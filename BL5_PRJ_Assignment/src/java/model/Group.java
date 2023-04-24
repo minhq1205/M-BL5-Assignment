@@ -4,37 +4,71 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author ADMIN
  */
 public class Group {
-    private int gid;
-    private Worker wid;
+    private int id;
+    private String name;
+    private Manager manager;
+    private ArrayList<Session> sessions = new ArrayList<>();
+    private ArrayList<Worker> workers = new ArrayList<>();
 
     public Group() {
     }
 
-    public Group(int gid, Worker wid) {
-        this.gid = gid;
-        this.wid = wid;
+    public Group(int id, String name, Manager manager) {
+        this.id = id;
+        this.name = name;
+        this.manager = manager;
     }
 
-    public int getGid() {
-        return gid;
+  
+
+    public ArrayList<Session> getSessions() {
+        return sessions;
     }
 
-    public void setGid(int gid) {
-        this.gid = gid;
+    public void setSessions(ArrayList<Session> sessions) {
+        this.sessions = sessions;
     }
 
-    public Worker getWid() {
-        return wid;
+    public ArrayList<Worker> getWorkers() {
+        return workers;
     }
 
-    public void setWid(Worker wid) {
-        this.wid = wid;
+    public void setWorkers(ArrayList<Worker> workers) {
+        this.workers = workers;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Manager getManager() {
+        return manager;
+    }
+
+    public void setManager(Manager manager) {
+        this.manager = manager;
     }
     
+
     
 }
