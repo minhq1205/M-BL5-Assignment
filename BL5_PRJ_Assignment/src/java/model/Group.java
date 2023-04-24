@@ -11,22 +11,45 @@ import java.util.ArrayList;
  * @author ADMIN
  */
 public class Group {
-    private int id;
-    private String name;
-    private Manager manager;
+    private int gid;
+    private String gname;
+    private Manager mid;
     private ArrayList<Session> sessions = new ArrayList<>();
     private ArrayList<Worker> workers = new ArrayList<>();
 
     public Group() {
     }
 
-    public Group(int id, String name, Manager manager) {
-        this.id = id;
-        this.name = name;
-        this.manager = manager;
+    public Group(int gid, String gname, Manager mid) {
+        this.gid = gid;
+        this.gname = gname;
+        this.mid = mid;
     }
 
-  
+    
+    public int getGid() {
+        return gid;
+    }
+
+    public void setGid(int gid) {
+        this.gid = gid;
+    }
+
+    public String getGname() {
+        return gname;
+    }
+
+    public void setGname(String gname) {
+        this.gname = gname;
+    }
+
+    public Manager getMid() {
+        return mid;
+    }
+
+    public void setMid(Manager mid) {
+        this.mid = mid;
+    }
 
     public ArrayList<Session> getSessions() {
         return sessions;
@@ -43,32 +66,6 @@ public class Group {
     public void setWorkers(ArrayList<Worker> workers) {
         this.workers = workers;
     }
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Manager getManager() {
-        return manager;
-    }
-
-    public void setManager(Manager manager) {
-        this.manager = manager;
-    }
-    
 
     
 }

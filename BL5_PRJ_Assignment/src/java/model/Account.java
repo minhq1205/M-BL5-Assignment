@@ -12,18 +12,14 @@ public class Account {
     private String username;
     private String password;
     private String displayname;
-    private int userid;
-    private String role;
 
     public Account() {
     }
 
-    public Account(String username, String password, String displayname, int userid,String role) {
+    public Account(String username, String password, String displayname) {
         this.username = username;
         this.password = password;
         this.displayname = displayname;
-        this.userid = userid;
-        this.role = role;
     }
 
     public String getUsername() {
@@ -49,24 +45,7 @@ public class Account {
     public void setDisplayname(String displayname) {
         this.displayname = displayname;
     }
-
-    public int getUserid() {
-        return userid;
-    }
-
-    public void setUserid(int userid) {
-        this.userid = userid;
-    }
-
-
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
+  
     
     
 }

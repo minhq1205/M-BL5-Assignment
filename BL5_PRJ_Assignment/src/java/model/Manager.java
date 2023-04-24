@@ -4,31 +4,38 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author ADMIN
  */
 public class Manager {
-    private int id;
+    private String mid;
     private String name;
     private String contact;
+    private ArrayList<Group> groups = new ArrayList<>();
+    private ArrayList<Session> sessions = new ArrayList<>();
 
     public Manager() {
     }
 
-    public Manager(int id, String name, String contact) {
-        this.id = id;
+    public Manager(String mid, String name, String contact) {
+        this.mid = mid;
         this.name = name;
         this.contact = contact;
     }
 
-    public int getId() {
-        return id;
+    public String getMid() {
+        return mid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setMid(String mid) {
+        this.mid = mid;
     }
+
+    
+
 
     public String getName() {
         return name;
@@ -44,6 +51,22 @@ public class Manager {
 
     public void setContact(String contact) {
         this.contact = contact;
+    }
+
+    public ArrayList<Group> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(ArrayList<Group> groups) {
+        this.groups = groups;
+    }
+
+    public ArrayList<Session> getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(ArrayList<Session> sessions) {
+        this.sessions = sessions;
     }
     
     

@@ -12,45 +12,46 @@ import java.util.ArrayList;
  * @author ADMIN
  */
 public class Session {
-    private int id;
-    private Manager manager;
-    private Time time;
-    private Date date;
-    private boolean present; 
-    private Group group;
 
-    private ArrayList<CheckWork> atts = new ArrayList<>();
+    private int sesid;
+    private Manager mid;
+    private Time time;
+    private boolean present; 
+    private Group gid;
+    private Time tid;
+    private Date date;
+  
+    private ArrayList<WorkCheck> atts = new ArrayList<>();
 
 
 
     public Session() {
     }
 
-    public Session(int id, Manager manager, Time time, Date date, boolean present, Group group) {
-        this.id = id;
-        this.manager = manager;
+    public Session(int sesid, Manager mid, Time time, boolean present, Group gid, Time tid, Date date) {
+        this.sesid = sesid;
+        this.mid = mid;
         this.time = time;
-        this.date = date;
         this.present = present;
-        this.group = group;
+        this.gid = gid;
+        this.tid = tid;
+        this.date = date;
     }
 
-
-
-    public int getId() {
-        return id;
+    public int getSesid() {
+        return sesid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setSesid(int sesid) {
+        this.sesid = sesid;
     }
 
-    public Manager getManager() {
-        return manager;
+    public Manager getMid() {
+        return mid;
     }
 
-    public void setManager(Manager manager) {
-        this.manager = manager;
+    public void setMid(Manager mid) {
+        this.mid = mid;
     }
 
     public Time getTime() {
@@ -61,14 +62,6 @@ public class Session {
         this.time = time;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
     public boolean isPresent() {
         return present;
     }
@@ -77,22 +70,39 @@ public class Session {
         this.present = present;
     }
 
-    public Group getGroup() {
-        return group;
+    public Group getGid() {
+        return gid;
     }
 
-    public void setGroup(Group group) {
-        this.group = group;
+    public void setGid(Group gid) {
+        this.gid = gid;
     }
 
-    public ArrayList<CheckWork> getAtts() {
+    public Time getTid() {
+        return tid;
+    }
+
+    public void setTid(Time tid) {
+        this.tid = tid;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public ArrayList<WorkCheck> getAtts() {
         return atts;
     }
 
-    public void setAtts(ArrayList<CheckWork> atts) {
+    public void setAtts(ArrayList<WorkCheck> atts) {
         this.atts = atts;
     }
     
+
 
     
 

@@ -39,39 +39,20 @@ public class TimeDBContext extends DBContext<Time> {
     }
 
     @Override
-    public ArrayList<Time> list() {
-        ArrayList<Time> slots = new ArrayList<>();
-        try {
-            String sql = "select slotid , slotTime\n"
-                    + "from [Time] ";
-            PreparedStatement stm = connection.prepareStatement(sql);
-            ResultSet rs = stm.executeQuery();
-            while (rs.next()) {
-                Time slot = new Time();
-                slot.setId(rs.getInt("slotid"));
-                slot.setTime(rs.getString("slotTime"));
-                slots.add(slot);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(TimeDBContext.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return slots;
-    }
-    
-   public ArrayList<Time> all() {
+   public ArrayList<Time> list() {
         ArrayList<Time> slots = new ArrayList<>();
         PreparedStatement stm = null;
         ResultSet rs = null;
         try {
-            String sql = "SELECT [slotid]\n"
-                    + "      ,[slotTime]\n"
+            String sql = "SELECT [tid]\n"
+                    + "      ,[time]\n"
                     + "  FROM [Time]";
             stm = connection.prepareStatement(sql);
             rs = stm.executeQuery();
             while (rs.next()) {
                 Time d = new Time();
-                d.setId(rs.getInt("slotid"));
-                d.setTime(rs.getString("slotTime"));
+                d.setTid(rs.getInt("tid"));
+                d.setTime(rs.getString("time"));
                 slots.add(d);
             }
         } catch (SQLException ex) {

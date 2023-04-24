@@ -17,41 +17,43 @@ import model.Account;
  * @author ADMIN
  */
 public class AccountDBContext extends DBContext<Account> {
-
     public Account get(String username, String password) {
         PreparedStatement stm = null;
         ResultSet rs = null;
         try {
-            String sql = "SELECT username,displayname FROM Account WHERE\n"
-                    + "username = ? AND [password] = ?";
-            stm = connection.prepareStatement(sql);
-            stm.setString(1, username);
-            stm.setString(2, password);
-            rs = stm.executeQuery();
-            if (rs.next()) {
+            String sql = "SELECT username,displayname FROM Account WHERE username = ? AND [password] = ?";
+             stm = connection.prepareStatement(sql);
+             stm.setString(1, username);
+             stm.setString(2, password);
+             rs = stm.executeQuery();
+            if(rs.next())
+            {
                 Account account = new Account();
-                account.setUsername(username);
+                account.setUsername(rs.getString("username"));
                 account.setDisplayname(rs.getString("displayname"));
                 return account;
+            } else {
             }
         } catch (SQLException ex) {
             Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (rs != null)
+        }
+        finally
+        {
+            if(rs!=null)
                 try {
-                rs.close();
+                    rs.close();
             } catch (SQLException ex) {
                 Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
             }
-            if (stm != null)
+            if(stm != null)
                 try {
-                stm.close();
+                    stm.close();
             } catch (SQLException ex) {
                 Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
             }
-            if (connection != null)
+            if(connection != null)
                 try {
-                connection.close();
+                    connection.close();
             } catch (SQLException ex) {
                 Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -59,27 +61,7 @@ public class AccountDBContext extends DBContext<Account> {
         return null;
     }
 
-    public String authenticate(String username, String password) {
-        String role = null;
-        PreparedStatement stm = null;
-        ResultSet rs = null;
-        try {
-            String sql = "Select a.role  From Account a \n"
-                    + "Where a.username = ? and a.password= ?";
-            stm = connection.prepareStatement(sql);
-            stm.setString(1, username);
-            stm.setString(2, password);
-            rs = stm.executeQuery();
-            if (rs.next()) {
-                role = rs.getString("role");
 
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
-
-        }
-        return role;
-    }
 
     @Override
     public void insert(Account model) {

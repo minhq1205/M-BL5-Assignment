@@ -11,24 +11,26 @@ import java.util.ArrayList;
  * @author ADMIN
  */
 public class Time {
-   private int id;
+   private int tid;
    private String time;
+   private ArrayList<Session> sessions = new ArrayList<>();
 
     public Time() {
     }
 
-    public Time(int id, String time) {
-        this.id = id;
+    public Time(int tid, String time) {
+        this.tid = tid;
         this.time = time;
     }
 
-    public int getId() {
-        return id;
+    public int getTid() {
+        return tid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setTid(int tid) {
+        this.tid = tid;
     }
+
 
     public String getTime() {
         return time;
@@ -45,5 +47,5 @@ public class Time {
     public void setSessions(ArrayList<Session> sessions) {
         this.sessions = sessions;
     }
-    private ArrayList<Session> sessions = new ArrayList<>();
+    
 }

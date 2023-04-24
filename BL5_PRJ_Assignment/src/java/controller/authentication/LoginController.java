@@ -47,26 +47,21 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String username = request.getParameter("username");
+       // processRequest(request, response);
+       String username = request.getParameter("username");
         String password = request.getParameter("password");
         AccountDBContext db = new AccountDBContext();
         Account account = db.get(username, password);
-        String role = db.authenticate(username, password);
-        if (account != null) {
+        if(account != null)
+        {
             request.getSession().setAttribute("account", account);
-            if (role != null) {
-                HttpSession session = request.getSession();
-                session.setAttribute("username", username);
-                session.setAttribute("role", role);
-                if (role.equals("admin")) {
-                    request.getRequestDispatcher("view/home.jsp").forward(request, response);
-                } else {
-                    request.getRequestDispatcher("view/user.jsp").forward(request, response);
-                }
-                response.getWriter().println("login successful!");
-            } else {
-                response.getWriter().println("login failed!");
-            }
+            request.getRequestDispatcher("view/home.jsp").forward(request, response);
+
+            response.getWriter().println("login successful!");
+        }
+        else
+        {
+            response.getWriter().println("login failed!");
         }
     }
 

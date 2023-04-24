@@ -4,31 +4,36 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author ADMIN
  */
 public class Worker {
-    private int id;
+    private String wid;
     private String name;
     private String contact;
-
+    private ArrayList<Group> groups = new ArrayList<>();
+    private ArrayList<WorkCheck> atts = new ArrayList<>();
+    
     public Worker() {
     }
 
-    public Worker(int id, String name, String contact) {
-        this.id = id;
+    public Worker(String wid, String name, String contact) {
+        this.wid = wid;
         this.name = name;
         this.contact = contact;
     }
 
-    public int getId() {
-        return id;
+    public String getWid() {
+        return wid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setWid(String wid) {
+        this.wid = wid;
     }
+
 
     public String getName() {
         return name;
@@ -44,6 +49,22 @@ public class Worker {
 
     public void setContact(String contact) {
         this.contact = contact;
+    }
+
+    public ArrayList<Group> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(ArrayList<Group> groups) {
+        this.groups = groups;
+    }
+
+    public ArrayList<WorkCheck> getAtts() {
+        return atts;
+    }
+
+    public void setAtts(ArrayList<WorkCheck> atts) {
+        this.atts = atts;
     }
     
     
